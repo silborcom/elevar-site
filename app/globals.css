@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  /* ELEVAR — paleta industrial: preto carvão / branco técnico / amarelo de sinalização */
+  --color-coal: #121210;
+  --color-ink: #1b1a17;
+  --color-night: #0b0b0a;
+  --color-paper: #efeee8;
+  --color-bone: #faf9f4;
+  --color-signal: #ffb400;
+  --color-signal-deep: #c98c00;
+  --color-steel: #807e75;
+  --color-line-dark: rgba(18, 18, 16, 0.16);
+  --color-line-light: rgba(239, 238, 232, 0.16);
+
+  --font-display: var(--font-archivo-black);
+  --font-sans: var(--font-archivo);
+  --font-mono: var(--font-plex-mono);
+
+  --tracking-label: 0.16em;
+
+  --animate-drop: drop 2.4s cubic-bezier(0.6, 0, 0.3, 1) infinite;
+
+  @keyframes drop {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    25% {
+      opacity: 1;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+body {
+  background: var(--color-coal);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-signal);
+  color: var(--color-night);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-signal);
+  outline-offset: 3px;
+}
+
+@layer components {
+/* Rótulo técnico — mono, caixa alta, espaçado */
+.t-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+/* Numeral fantasma — contorno vazado para números grandes de fundo */
+.t-ghost {
+  color: transparent;
+  -webkit-text-stroke: 1px currentColor;
+}
+
+/* Faixa de segurança — amarelo/preto a 45° */
+.hazard {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-signal) 0 14px,
+    var(--color-night) 14px 28px
+  );
+}
+
+/* Régua — tiques horizontais para trilhos verticais */
+.ruler-ticks {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    currentColor 0 1px,
+    transparent 1px 12px
+  );
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
