@@ -50,53 +50,29 @@ export function ProductStage({ product, flip }: { product: Product; flip: boolea
           </span>
 
           {image ? (
-            image.transparent ? (
-              /* Foto recortada — flutua sobre o papel, com linha de medição */
-              <motion.div style={{ y }} className="relative z-10 pt-8">
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes="(min-width: 1024px) 20rem, 70vw"
-                  className="h-[26rem] w-auto drop-shadow-[0_18px_36px_rgba(18,18,16,0.35)] sm:h-[30rem]"
-                />
-                <span aria-hidden className="absolute top-10 -right-8 bottom-2 hidden w-px bg-coal/30 sm:block">
-                  <span className="absolute -top-1.5 -left-1 font-mono text-[10px] text-coal/60">▲</span>
-                  <span className="absolute -bottom-1.5 -left-1 font-mono text-[10px] text-coal/60">▼</span>
-                </span>
-              </motion.div>
-            ) : (
-              /* Foto com fundo — placa técnica com marcações de canto */
-              <motion.figure
-                style={{ y }}
-                className="relative z-10 w-full max-w-sm border border-coal/20 bg-bone p-6 transition-shadow duration-300 hover:shadow-[0_20px_44px_rgba(18,18,16,0.18)]"
-              >
-                {(["top-2 left-2", "top-2 right-2", "bottom-2 left-2", "bottom-2 right-2"] as const).map(
-                  (position) => (
-                    <span
-                      key={position}
-                      aria-hidden
-                      className={`absolute ${position} font-mono text-xs text-signal-deep`}
-                    >
-                      +
-                    </span>
-                  )
-                )}
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={image.width}
-                  height={image.height}
-                  sizes="(min-width: 1024px) 20rem, 80vw"
-                  className="mx-auto h-80 w-auto object-contain"
-                />
-                <figcaption className="t-label mt-5 flex justify-between border-t border-coal/15 pt-3 text-coal/55">
-                  <span>Foto · Catálogo 2026</span>
-                  <span>{product.refCode}</span>
-                </figcaption>
-              </motion.figure>
-            )
+            /* Foto sem card — flutua sobre o papel, maior e mais visível.
+               Imagens com fundo branco usam mix-blend-multiply para se
+               integrar ao papel; imagens recortadas mantêm transparência. */
+            <motion.div style={{ y }} className="relative z-10 pt-8">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                sizes="(min-width: 1024px) 28rem, 85vw"
+                className={`h-[30rem] w-auto object-contain drop-shadow-[0_18px_36px_rgba(18,18,16,0.28)] sm:h-[36rem] lg:h-[40rem] ${
+                  image.transparent ? "" : "mix-blend-multiply"
+                }`}
+              />
+              <span aria-hidden className="absolute top-10 -right-8 bottom-2 hidden w-px bg-coal/30 sm:block">
+                <span className="absolute -top-1.5 -left-1 font-mono text-[10px] text-coal/60">▲</span>
+                <span className="absolute -bottom-1.5 -left-1 font-mono text-[10px] text-coal/60">▼</span>
+              </span>
+              <p className="t-label mt-4 flex justify-between text-coal/55">
+                <span>Foto · Catálogo 2026</span>
+                <span>{product.refCode}</span>
+              </p>
+            </motion.div>
           ) : (
             /* Sem foto no catálogo — placeholder honesto, desenhado */
             <div className="relative z-10 flex aspect-[3/4] w-full max-w-sm items-center justify-center border border-dashed border-coal/30 bg-bone">
