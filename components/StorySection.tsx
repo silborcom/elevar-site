@@ -1,5 +1,5 @@
 import { Reveal } from "@/lib/motion";
-import { IndustrialGrid, TechnicalLabel } from "@/components/ui";
+import { TechnicalLabel } from "@/components/ui";
 
 const vectors = [
   {
@@ -26,8 +26,6 @@ export function StorySection() {
       aria-label="O problema da movimentação de cargas"
       className="relative bg-paper py-24 text-coal lg:py-36"
     >
-      <IndustrialGrid />
-
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <Reveal>
           <TechnicalLabel tone="coal">SEC.01 — A natureza da carga</TechnicalLabel>
