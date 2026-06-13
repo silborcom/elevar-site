@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Reveal } from "@/lib/motion";
 import { ProductStage } from "@/components/ProductStage";
-import { IndustrialGrid, SectionHeading } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 import { catalogIndex, products } from "@/data/products";
 
 export function ProductStoryRail() {
@@ -14,7 +14,6 @@ export function ProductStoryRail() {
       className="relative bg-paper text-coal"
     >
       <div aria-hidden className="hazard h-3" />
-      <IndustrialGrid />
 
       <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-10 lg:py-36">
         <Reveal>
