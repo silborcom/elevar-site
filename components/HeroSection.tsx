@@ -70,11 +70,7 @@ export function HeroSection() {
                 <span className="absolute left-0 top-0 h-4 w-px animate-drop bg-signal" />
               </span>
             </div>
-            <p className="t-label text-right text-paper/45">
-              {company.coordinates}
-              <br />
-              Lat. industrial — RS, Brasil
-            </p>
+            <p className="t-label text-right text-paper/45"></p>
           </div>
         </div>
 
