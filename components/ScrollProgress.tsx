@@ -53,9 +53,7 @@ export function RulerRail() {
       aria-hidden
       className="fixed inset-y-0 left-0 z-40 hidden w-14 flex-col items-center border-r border-paper/15 bg-coal lg:flex"
     >
-      <div className="t-label mt-20 text-paper/60" style={{ writingMode: "vertical-rl" }}>
-        ELEVAR · CATÁLOGO 2026
-      </div>
+      <div className="t-label mt-20 text-paper/60" style={{ writingMode: "vertical-rl" }}></div>
       <div className="relative my-6 w-px flex-1">
         <div className="ruler-ticks absolute inset-0 text-paper/25" />
         <motion.div
