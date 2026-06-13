@@ -101,9 +101,9 @@ export const products: Product[] = [
         "Tabela da versão 1 velocidade. Versão 2 velocidades: potências de 0,37/1,1 a 3/1,1 kW e elevação de 0,9 a 7,2 m/min.",
     },
     image: {
-      src: "/products/talha-eletrica-tm.webp",
-      width: 616,
-      height: 1544,
+      src: "/products/talha-eletrica-tm.jpg",
+      width: 341,
+      height: 866,
       alt: "Talha elétrica de corrente Elevar série TM de 1 tonelada com botoeira pendente",
       transparent: false,
     },
