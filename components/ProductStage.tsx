@@ -9,7 +9,19 @@ import { Reveal } from "@/lib/motion";
 import { SpecPill, TechnicalLabel } from "@/components/ui";
 import type { Product } from "@/data/products";
 
-export function ProductStage({ product, flip }: { product: Product; flip: boolean }) {
+export function ProductStage({
+  product,
+  flip,
+  displayIndex,
+  total = 5,
+}: {
+  product: Product;
+  flip: boolean;
+  /** Numeração de estação exibida; cai para product.index quando ausente. */
+  displayIndex?: string;
+  /** Total de estações no denominador (ex.: Est. 03 / 17). */
+  total?: number;
+}) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -19,6 +31,8 @@ export function ProductStage({ product, flip }: { product: Product; flip: boolea
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [28, -28]);
 
   const image = product.image;
+  const stationIndex = displayIndex ?? product.index;
+  const stationTotal = String(total).padStart(2, "0");
 
   return (
     <article
@@ -30,7 +44,7 @@ export function ProductStage({ product, flip }: { product: Product; flip: boolea
       {/* Linha de metadados da estação */}
       <div className="flex flex-wrap items-baseline justify-between gap-3">
         <p className="t-label text-steel">
-          Est. {product.index} / 05 — {product.category}
+          Est. {stationIndex} / {stationTotal} — {product.category}
         </p>
         <p className="t-label text-steel">Fonte: {product.source.replace("_", " ")}</p>
       </div>
@@ -46,7 +60,7 @@ export function ProductStage({ product, flip }: { product: Product; flip: boolea
             aria-hidden
             className="t-ghost absolute -top-6 left-0 z-0 font-display text-[clamp(5rem,9vw,8rem)] leading-none text-coal/20 select-none"
           >
-            {product.index}
+            {stationIndex}
           </span>
 
           {image ? (
