@@ -240,6 +240,13 @@ const extraProducts: Product[] = [
       "Içamento, tensionamento e posicionamento de cargas em manutenção e montagem, onde não há ponto para talha vertical de corrente.",
     capacity: "0,75 – 3 t",
     refCode: "TAL.ALA",
+    image: {
+      src: "/products/talha-alavanca-tae.png",
+      width: 941,
+      height: 1672,
+      alt: "Talha manual de alavanca Elevar série TAE de 1,5 t com corrente de carga e gancho com trava",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "0,75 a 3 t" },
       { label: "Elevação", value: "1,5 e 3 m" },
