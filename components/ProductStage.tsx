@@ -64,9 +64,9 @@ export function ProductStage({
           </span>
 
           {image ? (
-            /* Foto sem card — flutua sobre o papel, maior e mais visível.
-               Imagens com fundo branco usam mix-blend-multiply para se
-               integrar ao papel; imagens recortadas mantêm transparência. */
+            /* Foto recortada — flutua livremente sobre o fundo da seção, sem
+               placa, card ou moldura. Apenas drop-shadow sutil para profundidade
+               e parallax leve no scroll. Tratamento idêntico para todos. */
             <motion.div style={{ y }} className="relative z-10 pt-8">
               <Image
                 src={image.src}
@@ -74,9 +74,7 @@ export function ProductStage({
                 width={image.width}
                 height={image.height}
                 sizes="(min-width: 1024px) 28rem, 85vw"
-                className={`h-[30rem] w-auto object-contain drop-shadow-[0_18px_36px_rgba(18,18,16,0.28)] sm:h-[36rem] lg:h-[40rem] ${
-                  image.transparent ? "" : "mix-blend-multiply"
-                }`}
+                className="h-[30rem] w-auto object-contain drop-shadow-[0_18px_36px_rgba(18,18,16,0.28)] sm:h-[36rem] lg:h-[40rem]"
               />
               <span aria-hidden className="absolute top-10 -right-8 bottom-2 hidden w-px bg-coal/30 sm:block">
                 <span className="absolute -top-1.5 -left-1 font-mono text-[10px] text-coal/60">▲</span>
