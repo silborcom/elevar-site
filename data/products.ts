@@ -101,10 +101,10 @@ export const products: Product[] = [
         "Tabela da versão 1 velocidade. Versão 2 velocidades: potências de 0,37/1,1 a 3/1,1 kW e elevação de 0,9 a 7,2 m/min.",
     },
     image: {
-      src: "/products/talha-eletrica-tm.jpg",
-      width: 341,
-      height: 866,
-      alt: "Talha elétrica de corrente Elevar série TM de 1 tonelada com botoeira pendente",
+      src: "/products/talha-eletrica-tm.png",
+      width: 1024,
+      height: 1536,
+      alt: "Talha elétrica de corrente Elevar série TM, corpo amarelo com corrente e botoeira",
       transparent: true,
     },
     source: "CATALOGO_2026",
@@ -139,10 +139,10 @@ export const products: Product[] = [
       note: "Elevação de 6 m. Potência de elevação conforme tabela da série TM.",
     },
     image: {
-      src: "/products/talha-eletrica-trole.webp",
-      width: 368,
-      height: 618,
-      alt: "Talha elétrica Elevar com trole elétrico acoplado para translação sobre viga",
+      src: "/products/talha-eletrica-trole.png",
+      width: 1024,
+      height: 1536,
+      alt: "Talha elétrica de corrente Elevar com trole, montada em barra de translação",
       transparent: true,
     },
     source: "CATALOGO_2026",
@@ -176,10 +176,10 @@ export const products: Product[] = [
       note: "Velocidades de elevação de 1 a 2,5 m/min conforme capacidade.",
     },
     image: {
-      src: "/products/talha-eletrica-dhy.webp",
+      src: "/products/talha-eletrica-dhy.png",
       width: 1024,
       height: 1536,
-      alt: "Talha elétrica de corrente Elevar série DHY com corpo circular amarelo e gancho giratório",
+      alt: "Talha elétrica de corrente Elevar série DHY, corpo circular amarelo com corrente de carga",
       transparent: true,
     },
     source: "CATALOGO_2026",
@@ -242,9 +242,9 @@ const extraProducts: Product[] = [
     refCode: "TAL.ALA",
     image: {
       src: "/products/talha-alavanca-tae.png",
-      width: 941,
-      height: 1672,
-      alt: "Talha manual de alavanca Elevar série TAE de 1,5 t com corrente de carga e gancho com trava",
+      width: 1024,
+      height: 1536,
+      alt: "Talha manual de alavanca Elevar série TAE, corpo amarelo com corrente de carga e gancho com trava",
       transparent: true,
     },
     specHighlights: [
@@ -277,6 +277,13 @@ const extraProducts: Product[] = [
       "Locais com pouca distância entre a viga e a carga, onde a altura recolhida do gancho é determinante.",
     capacity: "2 – 10 t",
     refCode: "TBA",
+    image: {
+      src: "/products/talha-baixa-altura-tba.png",
+      width: 1024,
+      height: 1536,
+      alt: "Talha de baixa altura Elevar série TBA, corpo amarelo de perfil reduzido com corrente de carga",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "2 a 10 t" },
       { label: "Elevação", value: "5 m" },
@@ -310,6 +317,13 @@ const extraProducts: Product[] = [
       "Pontes rolantes e pórticos de médio e grande porte, em movimentação contínua de 1 a 20 t.",
     capacity: "1 – 20 t",
     refCode: "TBE",
+    image: {
+      src: "/products/talha-eletrica-cabo-tbe.png",
+      width: 1536,
+      height: 1024,
+      alt: "Talha elétrica de cabo de aço Elevar série TBE, unidade horizontal com tambor enrolador e moitão inferior",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "1 a 20 t" },
       { label: "Grupo", value: "FEM M4 / 1Am" },
@@ -345,6 +359,13 @@ const extraProducts: Product[] = [
       "Monovias e vigas I em que a carga precisa percorrer o vão com posicionamento exato, sem energia elétrica.",
     capacity: "0,5 – 10 t",
     refCode: "TRO-MEC",
+    image: {
+      src: "/products/trole-mecanico-tme.png",
+      width: 1024,
+      height: 1536,
+      alt: "Trole mecânico Elevar série TME em viga, corpo amarelo acionado por corrente manual",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "0,5 a 10 t" },
       { label: "Aba da viga", value: "68 a 180 mm" },
@@ -377,6 +398,13 @@ const extraProducts: Product[] = [
       "Deslocamento horizontal de cargas em vigas I, em operações pontuais ou de baixo ciclo.",
     capacity: "1 – 5 t",
     refCode: "TRO-MAN",
+    image: {
+      src: "/products/trole-manual-te.png",
+      width: 1024,
+      height: 1536,
+      alt: "Trole manual Elevar série TE, carro de translação amarelo e preto para viga, sem motor",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "1 a 5 t" },
       { label: "Aba da viga", value: "68 a 175 mm" },
@@ -406,6 +434,13 @@ const extraProducts: Product[] = [
       "Monovias e pontes com ciclos frequentes de translação, integrável a talhas elétricas.",
     capacity: "1 – 5 t",
     refCode: "TEE",
+    image: {
+      src: "/products/trole-eletrico-tee.png",
+      width: 1536,
+      height: 1024,
+      alt: "Trole elétrico Elevar série TEE, carro de translação amarelo com motor elétrico",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "1 a 5 t" },
       { label: "Aba da viga", value: "74 a 210 mm" },
@@ -435,6 +470,13 @@ const extraProducts: Product[] = [
       "Tração, arraste e tensionamento em campo, montagem de estruturas e resgate de equipamentos.",
     capacity: "0,8 – 5,4 t",
     refCode: "GUI.ALA",
+    image: {
+      src: "/products/guincho-alavanca-gae.png",
+      width: 1536,
+      height: 1024,
+      alt: "Guincho de alavanca Elevar série GAE, corpo cinza em alumínio acionado por alavanca manual para cabo de aço",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "0,8 a 5,4 t" },
       { label: "Arraste", value: "1,25 a 8,1 t" },
@@ -465,6 +507,13 @@ const extraProducts: Product[] = [
       "Içamento vertical de cargas leves a médias em oficinas, obras e fachadas; regime moderado S3 20% 10 min.",
     capacity: "100 – 1.000 kg",
     refCode: "GEF",
+    image: {
+      src: "/products/guincho-eletrico-gef.png",
+      width: 1024,
+      height: 1536,
+      alt: "Guincho elétrico de cabo de aço Elevar série GEF, corpo vermelho com tambor e cabo de aço",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "100 a 1.000 kg" },
       { label: "Elevação", value: "12 / 6 m" },
@@ -495,6 +544,13 @@ const extraProducts: Product[] = [
       "Desvio de cabo em sistemas de içamento e arraste, ampliando o alcance e o ângulo de trabalho.",
     capacity: "1 – 28 t",
     refCode: "PAT / PATG",
+    image: {
+      src: "/products/patesca-elevar.png",
+      width: 1024,
+      height: 1536,
+      alt: "Patesca Elevar, roldana simples amarela com gancho para desvio de cabo de aço",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "1 a 28 t" },
       { label: "Roldana", value: "Ø 100 a 610 mm" },
@@ -530,6 +586,13 @@ const extraProducts: Product[] = [
       "Composição de talhas de cabo e sistemas de içamento manuais, multiplicando a capacidade pela quantidade de roldanas.",
     capacity: "250 – 5.000 kg",
     refCode: "MOI / CAD",
+    image: {
+      src: "/products/moitoes-cadernais.png",
+      width: 1024,
+      height: 1536,
+      alt: "Moitão Elevar de roldana múltipla, corpo amarelo com gancho de segurança",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Roldana", value: "Ø 45 a 150 mm" },
       { label: "Corda", value: '3/8" a 1.1/8"' },
@@ -563,6 +626,13 @@ const extraProducts: Product[] = [
       "Sistemas de içamento de grande porte e tração pesada, com terminação em gancho ou olhal.",
     capacity: "3,5 – 70 t",
     refCode: "CEP",
+    image: {
+      src: "/products/cadernal-extra-pesado-cep.png",
+      width: 1536,
+      height: 1024,
+      alt: "Cadernal extra pesado Elevar série CEP, par de blocos de roldanas amarelos com gancho",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Roldana", value: '6" a 20.1/2"' },
       { label: "Cabo de aço", value: '1/2" a 1.3/8"' },
@@ -597,6 +667,13 @@ const extraProducts: Product[] = [
       "Ponto de engate em talhas, patescas e sistemas de cabo, dimensionado pela capacidade nominal.",
     capacity: "0,5 – 15 t",
     refCode: "GAN",
+    image: {
+      src: "/products/gancho-com-olhal.png",
+      width: 1024,
+      height: 1536,
+      alt: "Gancho com olhal Elevar em aço forjado, com trava de segurança",
+      transparent: true,
+    },
     specHighlights: [
       { label: "Capacidade", value: "0,5 a 15 t" },
       { label: "Peso", value: "0,2 a 9 kg" },
