@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Reveal } from "@/lib/motion";
 import { ProductStage } from "@/components/ProductStage";
-import { IndustrialGrid, SectionHeading } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 import { catalogIndex, products } from "@/data/products";
 
 export function ProductStoryRail() {
@@ -14,7 +14,6 @@ export function ProductStoryRail() {
       className="relative bg-paper text-coal"
     >
       <div aria-hidden className="hazard h-3" />
-      <IndustrialGrid />
 
       <div className="relative mx-auto max-w-7xl px-5 py-24 sm:px-6 lg:px-10 lg:py-36">
         <Reveal>
@@ -34,9 +33,39 @@ export function ProductStoryRail() {
 
         <div className="mt-16">
           {products.map((product, index) => (
-            <ProductStage key={product.id} product={product} flip={index % 2 === 1} />
+            <ProductStage
+              key={product.id}
+              product={product}
+              flip={index % 2 === 1}
+              total={products.length}
+            />
           ))}
         </div>
+
+        {/* CTA para o catálogo completo */}
+        <Reveal>
+          <Link
+            href="/produtos"
+            className="group mt-20 block bg-coal text-paper transition-colors hover:bg-night lg:mt-28"
+          >
+            <div className="flex flex-col gap-8 px-6 py-12 sm:px-10 lg:flex-row lg:items-center lg:justify-between lg:py-16">
+              <div className="max-w-2xl">
+                <p className="t-label text-signal">Catálogo completo</p>
+                <p className="mt-4 font-display text-[clamp(1.75rem,4vw,3rem)] leading-[0.98] tracking-tight uppercase">
+                  Explore os 17 equipamentos da linha Elevar
+                </p>
+                <p className="mt-4 leading-relaxed text-paper/65">
+                  Talhas, troles, guinchos, patescas, moitões e cadernais — com
+                  especificações técnicas e códigos de produto.
+                </p>
+              </div>
+              <span className="t-label inline-flex shrink-0 items-center gap-3 bg-signal px-7 py-4 text-night transition-transform group-hover:translate-x-1.5">
+                Ver catálogo completo
+                <span aria-hidden>→</span>
+              </span>
+            </div>
+          </Link>
+        </Reveal>
 
         {/* Índice da linha completa */}
         <div className="mt-24 border-t-2 border-coal pt-12 lg:mt-32">
@@ -53,7 +82,7 @@ export function ProductStoryRail() {
             {catalogIndex.map((item, index) => (
               <Reveal as="li" key={item.code} delay={index * 0.05}>
                 <Link
-                  href="#contato"
+                  href="/produtos"
                   className="group grid grid-cols-[3rem_1fr_auto] items-baseline gap-4 border-b border-coal/15 py-5 transition-colors hover:bg-coal hover:text-paper sm:grid-cols-[4rem_1fr_1fr_auto] sm:px-4"
                 >
                   <span className="t-label text-signal-deep transition-colors group-hover:text-signal">

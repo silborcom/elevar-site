@@ -84,11 +84,12 @@ export function SiteFooter() {
         <nav aria-label="Mapa do site" className="flex flex-col gap-3">
           <p className="t-label text-paper/45">Navegação</p>
           {[
-            { href: "#equipamentos", label: "Equipamentos" },
-            { href: "#servicos", label: "Serviços" },
-            { href: "#especiais", label: "Equipamentos especiais" },
-            { href: "#seguranca", label: "Segurança" },
-            { href: "#contato", label: "Orçamento" },
+            { href: "/#equipamentos", label: "Equipamentos" },
+            { href: "/produtos", label: "Catálogo completo" },
+            { href: "/#servicos", label: "Serviços" },
+            { href: "/#especiais", label: "Equipamentos especiais" },
+            { href: "/#seguranca", label: "Segurança" },
+            { href: "/#contato", label: "Orçamento" },
           ].map((item) => (
             <Link
               key={item.href}
