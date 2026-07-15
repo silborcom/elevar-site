@@ -62,9 +62,9 @@ export const products: Product[] = [
         "Valores para elevação de 3 m. Versões de 5 m (sufixo x5) e peso adicional por metro conforme catálogo.",
     },
     image: {
-      src: "/products/talha-manual-es.webp",
-      width: 462,
-      height: 1600,
+      src: "/products/talha-manual-es.png",
+      width: 913,
+      height: 1722,
       alt: "Talha manual de corrente Elevar Compacta ES de 5 toneladas, corpo amarelo com corrente de carga preta",
       transparent: true,
     },
