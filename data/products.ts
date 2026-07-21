@@ -112,7 +112,7 @@ export const products: Product[] = [
   {
     id: "talha-eletrica-trole",
     index: "03",
-    name: "Talha elétrica com trole elétrico",
+    name: "Modelo TMT",
     series: "Série TM + translação motorizada",
     category: "Elevação + translação",
     shortDescription:
