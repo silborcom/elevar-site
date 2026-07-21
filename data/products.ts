@@ -154,7 +154,7 @@ export const products: Product[] = [
     series: "Série DHY — 1 velocidade",
     category: "Elevação elétrica",
     shortDescription:
-      "Talha elétrica de corrente de corpo circular, com alturas de elevação de até 15 m na versão de 1 t.",
+      "Talha elétrica compacta de corrente para uso intermitente.",
     application:
       "Içamento elétrico em capacidades de 1 a 5 t, com opções de maior altura de elevação.",
     capacity: "1 – 5 t",
