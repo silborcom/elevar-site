@@ -73,11 +73,11 @@ export const products: Product[] = [
   {
     id: "talha-eletrica-tm",
     index: "02",
-    name: "Talha elétrica de corrente",
+    name: "Modelo TM",
     series: "Série TM — 1 e 2 velocidades",
     category: "Elevação elétrica",
     shortDescription:
-      "Talha elétrica de corrente para regime industrial, disponível em uma ou duas velocidades de elevação.",
+      "Talha elétrica de corrente para regime industrial, disponível em uma ou duas velocidades de elevação. Altura de elevação padrão de 6 metros — fabricamos em qualquer altura de elevação sob consulta.",
     application:
       "Ciclos de içamento contínuos em linhas de produção, montagem e manutenção industrial.",
     capacity: "0,5 – 5 t",
