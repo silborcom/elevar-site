@@ -51,6 +51,12 @@ export const trustData = [
     description:
       "Rede de assistência em todo o território nacional ou na sede, em Canoas/RS.",
   },
+  {
+    figure: "120%",
+    label: "Ensaio dinâmico",
+    description:
+      "Equipamentos submetidos a ensaio dinâmico com 120% da carga nominal, validando o desempenho sob operação.",
+  },
 ] as const;
 
 /** Detalhes de projeto citados na linha TAE (site institucional). */
