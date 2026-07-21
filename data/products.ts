@@ -535,7 +535,7 @@ const extraProducts: Product[] = [
   {
     id: "patesca-elevar",
     index: "14",
-    name: "Patesca",
+    name: "Patesca nacional",
     series: "Elevar — gancho ou olhal",
     category: "Acessórios de içamento",
     shortDescription:
