@@ -38,9 +38,9 @@ export function HeroSection() {
 
             <StaggerItem>
               <p className="mt-8 max-w-xl text-lg leading-relaxed text-paper/75">
-                Equipamentos de elevação, transporte e movimentação de cargas
-                para operações que não podem parar. Do item de catálogo ao
-                projeto sob consulta.
+                Equipamentos de elevação e movimentação de cargas para
+                operações que não podem parar. Do item de catálogo ao projeto
+                sob consulta.
               </p>
             </StaggerItem>
 
