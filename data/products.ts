@@ -13,6 +13,17 @@ export type SpecTable = {
   note?: string;
 };
 
+/** Versão de um produto com tabela técnica própria (ex.: linhas EC e ES). */
+export type ProductVariant = {
+  /** Sigla curta usada no seletor (ex.: "EC", "ES"). */
+  code: string;
+  /** Rótulo completo da versão (ex.: "EC — Linha Premium"). */
+  label: string;
+  /** Frase curta que diferencia a versão das demais. */
+  tagline: string;
+  specTable: SpecTable;
+};
+
 export type Product = {
   id: string;
   index: string;
@@ -25,6 +36,8 @@ export type Product = {
   refCode: string;
   specHighlights: { label: string; value: string }[];
   specTable: SpecTable;
+  /** Quando presente, o produto é apresentado em versões selecionáveis. */
+  variants?: ProductVariant[];
   image?: { src: string; width: number; height: number; alt: string; transparent: boolean };
   source: string;
 };
@@ -34,10 +47,10 @@ export const products: Product[] = [
     id: "talha-manual-es",
     index: "01",
     name: "Talha manual de corrente",
-    series: "Elevar Compacta — ES",
+    series: "Elevar Compacta — EC & ES",
     category: "Elevação manual",
     shortDescription:
-      "Elevação por corrente de carga com acionamento manual. Compacta, sem dependência de energia elétrica.",
+      "Elevação por corrente de carga com acionamento manual, compacta e sem dependência de energia elétrica. Disponível em duas versões: EC (Linha Premium), voltada à robustez e durabilidade em uso severo, e ES (Linha Econômica), com excelente custo-benefício para aplicações gerais.",
     application:
       "Içamento em indústria, manutenção e construção, em pontos fixos ou acoplada a trole sobre viga.",
     capacity: "0,5 – 10 t",
@@ -61,6 +74,57 @@ export const products: Product[] = [
       note:
         "Valores para elevação de 3 m. Versões de 5 m (sufixo x5) e peso adicional por metro conforme catálogo.",
     },
+    variants: [
+      {
+        code: "EC",
+        label: "EC — Linha Premium",
+        tagline:
+          "Máxima robustez, maior durabilidade e desempenho para aplicações industriais severas.",
+        specTable: {
+          columns: ["Cap. (t)", "Código", "Elev. (m)", "Esforço (kg)", "Peso (kg)", "Adic./m (kg)"],
+          rows: [
+            ["0,5", "TAL.MAN-0,5tX3", "3", "21", "9,5", "1,6"],
+            ["0,5", "TAL.MAN-0,5tX5", "5", "21", "12,5", "1,6"],
+            ["1,0", "TAL.MAN-1tX3", "3", "26", "12,4", "1,6"],
+            ["1,0", "TAL.MAN-1tX5", "5", "26", "15,6", "1,6"],
+            ["2,0", "TAL.MAN-2tX3", "3", "34", "17", "2,2"],
+            ["2,0", "TAL.MAN-2tX5", "5", "34", "21,3", "2,2"],
+            ["3,0", "TAL.MAN-3tX3", "3", "37", "24,2", "3,6"],
+            ["3,0", "TAL.MAN-3tX5", "5", "37", "31,44", "3,6"],
+            ["5", "TAL.MAN-5tX3", "3", "40,5", "38,17", "5,18"],
+            ["5", "TAL.MAN-5tX5", "5", "40,5", "49", "5,18"],
+            ["10,0", "TAL.MAN-10tX3", "3", "40,5", "78", "9,5"],
+            ["10,0", "TAL.MAN-10tX5", "5", "40,5", "97", "9,5"],
+          ],
+          note:
+            "Altura de elevação padrão de 3 e 5 m. Poderemos fornecer talhas com corrente de carga zincada ao invés de pintada de preto (sob encomenda).",
+        },
+      },
+      {
+        code: "ES",
+        label: "ES — Linha Econômica",
+        tagline:
+          "Qualidade, confiabilidade e excelente custo-benefício para aplicações gerais.",
+        specTable: {
+          columns: ["Cap. (t)", "Código", "Elev. (m)", "Esforço (kg)", "Peso (kg)", "Adic./m (kg)"],
+          rows: [
+            ["0,5", "TAL.MAN-0,5tx3", "3", "21", "9", "1,6"],
+            ["0,5", "TAL.MAN-0,5tx5", "5", "21", "12", "1,6"],
+            ["1", "TAL.MAN-1tx3", "3", "26", "11", "1,6"],
+            ["1", "TAL.MAN-1tx5", "5", "26", "14", "1,6"],
+            ["2", "TAL.MAN-2tx3", "3", "34", "16", "3"],
+            ["2", "TAL.MAN-2tx5", "5", "34", "22", "3"],
+            ["3", "TAL.MAN-3tx3", "3", "37", "27", "3,6"],
+            ["3", "TAL.MAN-3tx5", "5", "37", "33", "3,6"],
+            ["5", "TAL.MAN-5tx3", "3", "40,5", "39", "5,18"],
+            ["5", "TAL.MAN-5tx5", "5", "40,5", "50", "5,18"],
+            ["10", "TAL.MAN-10tx3", "3", "40,5", "75", "9,5"],
+            ["10", "TAL.MAN-10tx5", "5", "40,5", "97", "9,5"],
+          ],
+          note: "Altura de elevação padrão de 3 e 5 m; peso adicional por metro conforme catálogo.",
+        },
+      },
+    ],
     image: {
       src: "/products/talha-manual-es.png",
       width: 913,

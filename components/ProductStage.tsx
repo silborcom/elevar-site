@@ -2,12 +2,100 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 import { Reveal } from "@/lib/motion";
 import { SpecPill, TechnicalLabel } from "@/components/ui";
-import type { Product } from "@/data/products";
+import type { Product, SpecTable } from "@/data/products";
+
+/** Tabela de especificações reutilizável (produto único ou versão). */
+function SpecTableView({ specTable, caption }: { specTable: SpecTable; caption: string }) {
+  return (
+    <>
+      <div className="mt-6 overflow-x-auto">
+        <table className="w-full min-w-[28rem] border-collapse text-left">
+          <caption className="sr-only">{caption}</caption>
+          <thead>
+            <tr className="border-y border-coal/25">
+              {specTable.columns.map((column) => (
+                <th key={column} scope="col" className="t-label py-3 pr-6 font-medium text-coal/60">
+                  {column}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {specTable.rows.map((row) => (
+              <tr
+                key={row.join("-")}
+                className="border-b border-coal/12 transition-colors hover:bg-signal/10"
+              >
+                {row.map((cell, cellIndex) => (
+                  <td
+                    key={`${cell}-${cellIndex}`}
+                    className={`py-3 pr-6 font-mono text-sm ${
+                      cellIndex === 0 ? "font-medium text-coal" : "text-coal/75"
+                    }`}
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {specTable.note ? (
+        <p className="t-label mt-4 max-w-xl text-coal/50 normal-case tracking-normal">
+          * {specTable.note}
+        </p>
+      ) : null}
+    </>
+  );
+}
+
+/** Bloco com seletor de versões (ex.: EC/ES), cada uma com tabela própria. */
+function VariantSpecs({ product }: { product: Product }) {
+  const variants = product.variants ?? [];
+  const [active, setActive] = useState(0);
+  const current = variants[active];
+
+  return (
+    <div>
+      <div role="tablist" aria-label={`Versões — ${product.name}`} className="flex flex-wrap gap-2">
+        {variants.map((variant, i) => {
+          const selected = i === active;
+          return (
+            <button
+              key={variant.code}
+              type="button"
+              role="tab"
+              aria-selected={selected}
+              onClick={() => setActive(i)}
+              className={`t-label border px-4 py-2 transition-colors ${
+                selected
+                  ? "border-coal bg-coal text-bone"
+                  : "border-coal/25 text-coal/70 hover:border-coal/60 hover:text-coal"
+              }`}
+            >
+              {variant.label}
+            </button>
+          );
+        })}
+      </div>
+
+      <p className="mt-5 border-l-2 border-signal pl-5 max-w-xl leading-relaxed text-coal/85">
+        {current.tagline}
+      </p>
+
+      <SpecTableView
+        specTable={current.specTable}
+        caption={`Tabela de especificações — ${product.name} ${current.label}`}
+      />
+    </div>
+  );
+}
 
 export function ProductStage({
   product,
@@ -122,46 +210,16 @@ export function ProductStage({
           </Reveal>
 
           <Reveal delay={0.16}>
-            <div className="mt-10 overflow-x-auto">
-              <table className="w-full min-w-[28rem] border-collapse text-left">
-                <caption className="sr-only">
-                  Tabela de especificações — {product.name} {product.series}
-                </caption>
-                <thead>
-                  <tr className="border-y border-coal/25">
-                    {product.specTable.columns.map((column) => (
-                      <th key={column} scope="col" className="t-label py-3 pr-6 font-medium text-coal/60">
-                        {column}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {product.specTable.rows.map((row) => (
-                    <tr
-                      key={row.join("-")}
-                      className="border-b border-coal/12 transition-colors hover:bg-signal/10"
-                    >
-                      {row.map((cell, cellIndex) => (
-                        <td
-                          key={`${cell}-${cellIndex}`}
-                          className={`py-3 pr-6 font-mono text-sm ${
-                            cellIndex === 0 ? "font-medium text-coal" : "text-coal/75"
-                          }`}
-                        >
-                          {cell}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="mt-10">
+              {product.variants && product.variants.length > 0 ? (
+                <VariantSpecs product={product} />
+              ) : (
+                <SpecTableView
+                  specTable={product.specTable}
+                  caption={`Tabela de especificações — ${product.name} ${product.series}`}
+                />
+              )}
             </div>
-            {product.specTable.note ? (
-              <p className="t-label mt-4 max-w-xl text-coal/50 normal-case tracking-normal">
-                * {product.specTable.note}
-              </p>
-            ) : null}
           </Reveal>
 
           <Reveal delay={0.2}>
