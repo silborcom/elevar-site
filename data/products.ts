@@ -491,7 +491,7 @@ const extraProducts: Product[] = [
         ["3,2 t", "GUI.ALA-3,2X20", "5", "44", "16", "26"],
         ["5,4 t", "GUI.ALA-5.4X20", "8,1", "85", "20", "61,7"],
       ],
-      note: "Cabo padrão de 20 m; outros comprimentos sob consulta.",
+      note: "Cabo padrão de 20 m; outros comprimentos sob consulta. Modelos pequenos até 3,2 t acompanham gancho frontal.",
     },
     source: "CATALOGO_2026",
   },
