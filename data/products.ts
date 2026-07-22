@@ -13,6 +13,17 @@ export type SpecTable = {
   note?: string;
 };
 
+/** Versão de um produto com tabela técnica própria (ex.: linhas EC e ES). */
+export type ProductVariant = {
+  /** Sigla curta usada no seletor (ex.: "EC", "ES"). */
+  code: string;
+  /** Rótulo completo da versão (ex.: "EC — Linha Premium"). */
+  label: string;
+  /** Frase curta que diferencia a versão das demais. */
+  tagline: string;
+  specTable: SpecTable;
+};
+
 export type Product = {
   id: string;
   index: string;
@@ -25,6 +36,8 @@ export type Product = {
   refCode: string;
   specHighlights: { label: string; value: string }[];
   specTable: SpecTable;
+  /** Quando presente, o produto é apresentado em versões selecionáveis. */
+  variants?: ProductVariant[];
   image?: { src: string; width: number; height: number; alt: string; transparent: boolean };
   source: string;
 };
@@ -34,10 +47,10 @@ export const products: Product[] = [
     id: "talha-manual-es",
     index: "01",
     name: "Talha manual de corrente",
-    series: "Elevar Compacta — ES",
+    series: "Elevar Compacta — EC & ES",
     category: "Elevação manual",
     shortDescription:
-      "Elevação por corrente de carga com acionamento manual. Compacta, sem dependência de energia elétrica.",
+      "Elevação por corrente de carga com acionamento manual, compacta e sem dependência de energia elétrica. Disponível em duas versões: EC (Linha Premium), voltada à robustez e durabilidade em uso severo, e ES (Linha Econômica), com excelente custo-benefício para aplicações gerais.",
     application:
       "Içamento em indústria, manutenção e construção, em pontos fixos ou acoplada a trole sobre viga.",
     capacity: "0,5 – 10 t",
@@ -61,11 +74,62 @@ export const products: Product[] = [
       note:
         "Valores para elevação de 3 m. Versões de 5 m (sufixo x5) e peso adicional por metro conforme catálogo.",
     },
+    variants: [
+      {
+        code: "EC",
+        label: "EC — Linha Premium",
+        tagline:
+          "Máxima robustez, maior durabilidade e desempenho para aplicações industriais severas.",
+        specTable: {
+          columns: ["Cap. (t)", "Código", "Elev. (m)", "Esforço (kg)", "Peso (kg)", "Adic./m (kg)"],
+          rows: [
+            ["0,5", "TAL.MAN-0,5tX3", "3", "21", "9,5", "1,6"],
+            ["0,5", "TAL.MAN-0,5tX5", "5", "21", "12,5", "1,6"],
+            ["1,0", "TAL.MAN-1tX3", "3", "26", "12,4", "1,6"],
+            ["1,0", "TAL.MAN-1tX5", "5", "26", "15,6", "1,6"],
+            ["2,0", "TAL.MAN-2tX3", "3", "34", "17", "2,2"],
+            ["2,0", "TAL.MAN-2tX5", "5", "34", "21,3", "2,2"],
+            ["3,0", "TAL.MAN-3tX3", "3", "37", "24,2", "3,6"],
+            ["3,0", "TAL.MAN-3tX5", "5", "37", "31,44", "3,6"],
+            ["5", "TAL.MAN-5tX3", "3", "40,5", "38,17", "5,18"],
+            ["5", "TAL.MAN-5tX5", "5", "40,5", "49", "5,18"],
+            ["10,0", "TAL.MAN-10tX3", "3", "40,5", "78", "9,5"],
+            ["10,0", "TAL.MAN-10tX5", "5", "40,5", "97", "9,5"],
+          ],
+          note:
+            "Altura de elevação padrão de 3 e 5 m. Poderemos fornecer talhas com corrente de carga zincada ao invés de pintada de preto (sob encomenda).",
+        },
+      },
+      {
+        code: "ES",
+        label: "ES — Linha Econômica",
+        tagline:
+          "Qualidade, confiabilidade e excelente custo-benefício para aplicações gerais.",
+        specTable: {
+          columns: ["Cap. (t)", "Código", "Elev. (m)", "Esforço (kg)", "Peso (kg)", "Adic./m (kg)"],
+          rows: [
+            ["0,5", "TAL.MAN-0,5tx3", "3", "21", "9", "1,6"],
+            ["0,5", "TAL.MAN-0,5tx5", "5", "21", "12", "1,6"],
+            ["1", "TAL.MAN-1tx3", "3", "26", "11", "1,6"],
+            ["1", "TAL.MAN-1tx5", "5", "26", "14", "1,6"],
+            ["2", "TAL.MAN-2tx3", "3", "34", "16", "3"],
+            ["2", "TAL.MAN-2tx5", "5", "34", "22", "3"],
+            ["3", "TAL.MAN-3tx3", "3", "37", "27", "3,6"],
+            ["3", "TAL.MAN-3tx5", "5", "37", "33", "3,6"],
+            ["5", "TAL.MAN-5tx3", "3", "40,5", "39", "5,18"],
+            ["5", "TAL.MAN-5tx5", "5", "40,5", "50", "5,18"],
+            ["10", "TAL.MAN-10tx3", "3", "40,5", "75", "9,5"],
+            ["10", "TAL.MAN-10tx5", "5", "40,5", "97", "9,5"],
+          ],
+          note: "Altura de elevação padrão de 3 e 5 m; peso adicional por metro conforme catálogo.",
+        },
+      },
+    ],
     image: {
-      src: "/products/talha-manual-es.webp",
-      width: 462,
-      height: 1600,
-      alt: "Talha manual de corrente Elevar Compacta ES de 5 toneladas, corpo amarelo com corrente de carga preta",
+      src: "/products/talha-manual-es.png",
+      width: 1024,
+      height: 1536,
+      alt: "Talha manual de corrente Elevar Compacta, corpo amarelo com placa preta, corrente de carga preta e corrente de manobra prateada",
       transparent: true,
     },
     source: "CATALOGO_2026",
@@ -73,11 +137,11 @@ export const products: Product[] = [
   {
     id: "talha-eletrica-tm",
     index: "02",
-    name: "Talha elétrica de corrente",
+    name: "Modelo TM",
     series: "Série TM — 1 e 2 velocidades",
     category: "Elevação elétrica",
     shortDescription:
-      "Talha elétrica de corrente para regime industrial, disponível em uma ou duas velocidades de elevação.",
+      "Talha elétrica de corrente para regime industrial, disponível em uma ou duas velocidades de elevação. Altura de elevação padrão de 6 metros — fabricamos em qualquer altura de elevação sob consulta.",
     application:
       "Ciclos de içamento contínuos em linhas de produção, montagem e manutenção industrial.",
     capacity: "0,5 – 5 t",
@@ -112,7 +176,7 @@ export const products: Product[] = [
   {
     id: "talha-eletrica-trole",
     index: "03",
-    name: "Talha elétrica com trole elétrico",
+    name: "Modelo TMT",
     series: "Série TM + translação motorizada",
     category: "Elevação + translação",
     shortDescription:
@@ -154,7 +218,7 @@ export const products: Product[] = [
     series: "Série DHY — 1 velocidade",
     category: "Elevação elétrica",
     shortDescription:
-      "Talha elétrica de corrente de corpo circular, com alturas de elevação de até 15 m na versão de 1 t.",
+      "Talha elétrica compacta de corrente para uso intermitente.",
     application:
       "Içamento elétrico em capacidades de 1 a 5 t, com opções de maior altura de elevação.",
     capacity: "1 – 5 t",
@@ -187,7 +251,7 @@ export const products: Product[] = [
   {
     id: "patesca-europeia",
     index: "05",
-    name: "Patesca",
+    name: "Patesca importada",
     series: "Modelo europeia",
     category: "Acessórios de içamento",
     shortDescription:
@@ -471,9 +535,9 @@ const extraProducts: Product[] = [
     capacity: "0,8 – 5,4 t",
     refCode: "GUI.ALA",
     image: {
-      src: "/products/guincho-alavanca-gae.png",
-      width: 1536,
-      height: 1024,
+      src: "/products/guincho-alavanca-gae.webp",
+      width: 1398,
+      height: 981,
       alt: "Guincho de alavanca Elevar série GAE, corpo cinza em alumínio acionado por alavanca manual para cabo de aço",
       transparent: true,
     },
@@ -491,7 +555,7 @@ const extraProducts: Product[] = [
         ["3,2 t", "GUI.ALA-3,2X20", "5", "44", "16", "26"],
         ["5,4 t", "GUI.ALA-5.4X20", "8,1", "85", "20", "61,7"],
       ],
-      note: "Cabo padrão de 20 m; outros comprimentos sob consulta.",
+      note: "Cabo padrão de 20 m; outros comprimentos sob consulta. Modelos pequenos até 3,2 t acompanham gancho frontal.",
     },
     source: "CATALOGO_2026",
   },
@@ -508,10 +572,10 @@ const extraProducts: Product[] = [
     capacity: "100 – 1.000 kg",
     refCode: "GEF",
     image: {
-      src: "/products/guincho-eletrico-gef.png",
-      width: 1024,
-      height: 1536,
-      alt: "Guincho elétrico de cabo de aço Elevar série GEF, corpo vermelho com tambor e cabo de aço",
+      src: "/products/guincho-eletrico-gef.webp",
+      width: 2000,
+      height: 1554,
+      alt: "Guincho elétrico de cabo de aço Elevar série GEF, corpo amarelo fixado em viga com cabo de aço, gancho e controle pendente",
       transparent: true,
     },
     specHighlights: [
@@ -528,14 +592,14 @@ const extraProducts: Product[] = [
         ["GEF 500/1000", "500 / 1000", "12 / 6", "8 / 4", "1.600", "32"],
       ],
       note:
-        "Equipamento monofásico (127/220 V). Valores com e sem cadernal de polia. Versão com trole disponível.",
+        "Equipamento monofásico (127/220 V). Valores com e sem cadernal de polia. Versão com trole disponível. Todos os modelos acompanham polia.",
     },
     source: "CATALOGO_2026",
   },
   {
     id: "patesca-elevar",
     index: "14",
-    name: "Patesca",
+    name: "Patesca nacional",
     series: "Elevar — gancho ou olhal",
     category: "Acessórios de içamento",
     shortDescription:
@@ -545,10 +609,10 @@ const extraProducts: Product[] = [
     capacity: "1 – 28 t",
     refCode: "PAT / PATG",
     image: {
-      src: "/products/patesca-elevar.png",
-      width: 1024,
-      height: 1536,
-      alt: "Patesca Elevar, roldana simples amarela com gancho para desvio de cabo de aço",
+      src: "/products/patesca-elevar.webp",
+      width: 845,
+      height: 2000,
+      alt: "Patesca Elevar nacional, roldana amarela com gancho vermelho para desvio de cabo de aço",
       transparent: true,
     },
     specHighlights: [
@@ -587,10 +651,10 @@ const extraProducts: Product[] = [
     capacity: "250 – 5.000 kg",
     refCode: "MOI / CAD",
     image: {
-      src: "/products/moitoes-cadernais.png",
-      width: 1024,
-      height: 1536,
-      alt: "Moitão Elevar de roldana múltipla, corpo amarelo com gancho de segurança",
+      src: "/products/moitoes-cadernais.webp",
+      width: 265,
+      height: 1516,
+      alt: "Cadernal de aço Elevar com roldana dupla, corpo amarelo e gancho superior",
       transparent: true,
     },
     specHighlights: [

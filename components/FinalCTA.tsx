@@ -76,8 +76,8 @@ export function SiteFooter() {
           <p className="font-display text-2xl tracking-tight">ELEVAR</p>
           <p className="t-label mt-2 text-paper/55">Movimentação de cargas</p>
           <p className="mt-6 max-w-xs text-sm leading-relaxed text-paper/60">
-            Equipamentos e projetos para elevação, transporte e movimentação de
-            cargas. {company.address.city}/{company.address.state}, Brasil.
+            Equipamentos e projetos para elevação e movimentação de cargas.{" "}
+            {company.address.city}/{company.address.state}, Brasil.
           </p>
         </div>
 

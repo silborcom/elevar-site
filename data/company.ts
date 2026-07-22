@@ -7,14 +7,14 @@ export const company = {
   shortName: "ELEVAR",
   tagline: "Engenharia aplicada ao movimento.",
   address: {
-    street: "Rua Cuiabá, 66",
-    district: "Mathias Velho",
+    street: "Rua Dom Feliciano, 293",
+    district: "Niterói",
     city: "Canoas",
     state: "RS",
-    zip: "92340-250",
+    zip: "92120-070",
   },
   /** Coordenadas aproximadas de Canoas/RS — detalhe gráfico do layout */
-  coordinates: "29°55′S · 51°11′W",
+  coordinates: "29°55′S · 51°10′W",
   phone: "(51) 3060-0991",
   whatsapp: "(51) 98245-3205",
   whatsappHref: "https://wa.me/5551982453205",
@@ -50,6 +50,12 @@ export const trustData = [
     label: "Assistência técnica",
     description:
       "Rede de assistência em todo o território nacional ou na sede, em Canoas/RS.",
+  },
+  {
+    figure: "120%",
+    label: "Ensaio dinâmico",
+    description:
+      "Equipamentos submetidos a ensaio dinâmico com 120% da carga nominal, validando o desempenho sob operação.",
   },
 ] as const;
 

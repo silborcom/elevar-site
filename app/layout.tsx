@@ -10,7 +10,7 @@ import { company } from "@/data/company";
 export const metadata: Metadata = {
   title: `${company.name} — ${company.tagline}`,
   description:
-    "Equipamentos de elevação, transporte e movimentação de cargas: talhas manuais e elétricas, troles, patescas, pontes rolantes, monovias e projetos para áreas classificadas. Canoas/RS.",
+    "Equipamentos de elevação e movimentação de cargas: talhas manuais e elétricas, troles, patescas, pontes rolantes, monovias e projetos para áreas classificadas. Canoas/RS.",
   keywords: [
     "movimentação de cargas",
     "talha elétrica",

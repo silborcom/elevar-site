@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Catálogo completo — Elevar Movimentação de Cargas",
     description:
-      "Linha completa de equipamentos de elevação, transporte e movimentação de cargas, com fichas técnicas extraídas do catálogo Elevar.",
+      "Linha completa de equipamentos de elevação e movimentação de cargas, com fichas técnicas extraídas do catálogo Elevar.",
     locale: "pt_BR",
     type: "website",
   },
@@ -64,8 +64,8 @@ export default function ProdutosPage() {
 
           <Reveal delay={0.12}>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-paper/70">
-              {catalogTotal} equipamentos de elevação, transporte e movimentação
-              de cargas, organizados por família. Especificações e códigos
+              {catalogTotal} equipamentos de elevação e movimentação de cargas,
+              organizados por família. Especificações e códigos
               extraídos do catálogo técnico Elevar — fichas completas e
               dimensionamento sob consulta.
             </p>
