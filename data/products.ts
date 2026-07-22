@@ -528,7 +528,7 @@ const extraProducts: Product[] = [
         ["GEF 500/1000", "500 / 1000", "12 / 6", "8 / 4", "1.600", "32"],
       ],
       note:
-        "Equipamento monofásico (127/220 V). Valores com e sem cadernal de polia. Versão com trole disponível.",
+        "Equipamento monofásico (127/220 V). Valores com e sem cadernal de polia. Versão com trole disponível. Todos os modelos acompanham polia.",
     },
     source: "CATALOGO_2026",
   },
