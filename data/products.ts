@@ -187,7 +187,7 @@ export const products: Product[] = [
   {
     id: "patesca-europeia",
     index: "05",
-    name: "Patesca",
+    name: "Patesca importada",
     series: "Modelo europeia",
     category: "Acessórios de içamento",
     shortDescription:
