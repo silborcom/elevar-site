@@ -126,7 +126,7 @@ export const products: Product[] = [
       },
     ],
     image: {
-      src: "/products/talha-manual-es.png",
+      src: "/products/talha-manual-es.webp",
       width: 1024,
       height: 1536,
       alt: "Talha manual de corrente Elevar Compacta, corpo amarelo com placa preta, corrente de carga preta e corrente de manobra prateada",
@@ -165,7 +165,7 @@ export const products: Product[] = [
         "Tabela da versão 1 velocidade. Versão 2 velocidades: potências de 0,37/1,1 a 3/1,1 kW e elevação de 0,9 a 7,2 m/min.",
     },
     image: {
-      src: "/products/talha-eletrica-tm.png",
+      src: "/products/talha-eletrica-tm.webp",
       width: 1024,
       height: 1536,
       alt: "Talha elétrica de corrente Elevar série TM, corpo amarelo com corrente e botoeira",
@@ -203,7 +203,7 @@ export const products: Product[] = [
       note: "Elevação de 6 m. Potência de elevação conforme tabela da série TM.",
     },
     image: {
-      src: "/products/talha-eletrica-trole.png",
+      src: "/products/talha-eletrica-trole.webp",
       width: 1024,
       height: 1536,
       alt: "Talha elétrica de corrente Elevar com trole, montada em barra de translação",
@@ -240,7 +240,7 @@ export const products: Product[] = [
       note: "Velocidades de elevação de 1 a 2,5 m/min conforme capacidade.",
     },
     image: {
-      src: "/products/talha-eletrica-dhy.png",
+      src: "/products/talha-eletrica-dhy.webp",
       width: 1024,
       height: 1536,
       alt: "Talha elétrica de corrente Elevar série DHY, corpo circular amarelo com corrente de carga",
@@ -305,7 +305,7 @@ const extraProducts: Product[] = [
     capacity: "0,75 – 3 t",
     refCode: "TAL.ALA",
     image: {
-      src: "/products/talha-alavanca-tae.png",
+      src: "/products/talha-alavanca-tae.webp",
       width: 1024,
       height: 1536,
       alt: "Talha manual de alavanca Elevar série TAE, corpo amarelo com corrente de carga e gancho com trava",
@@ -342,7 +342,7 @@ const extraProducts: Product[] = [
     capacity: "2 – 10 t",
     refCode: "TBA",
     image: {
-      src: "/products/talha-baixa-altura-tba.png",
+      src: "/products/talha-baixa-altura-tba.webp",
       width: 1024,
       height: 1536,
       alt: "Talha de baixa altura Elevar série TBA, corpo amarelo de perfil reduzido com corrente de carga",
@@ -382,7 +382,7 @@ const extraProducts: Product[] = [
     capacity: "1 – 20 t",
     refCode: "TBE",
     image: {
-      src: "/products/talha-eletrica-cabo-tbe.png",
+      src: "/products/talha-eletrica-cabo-tbe.webp",
       width: 1536,
       height: 1024,
       alt: "Talha elétrica de cabo de aço Elevar série TBE, unidade horizontal com tambor enrolador e moitão inferior",
@@ -424,7 +424,7 @@ const extraProducts: Product[] = [
     capacity: "0,5 – 10 t",
     refCode: "TRO-MEC",
     image: {
-      src: "/products/trole-mecanico-tme.png",
+      src: "/products/trole-mecanico-tme.webp",
       width: 1024,
       height: 1536,
       alt: "Trole mecânico Elevar série TME em viga, corpo amarelo acionado por corrente manual",
@@ -463,7 +463,7 @@ const extraProducts: Product[] = [
     capacity: "1 – 5 t",
     refCode: "TRO-MAN",
     image: {
-      src: "/products/trole-manual-te.png",
+      src: "/products/trole-manual-te.webp",
       width: 1024,
       height: 1536,
       alt: "Trole manual Elevar série TE, carro de translação amarelo e preto para viga, sem motor",
@@ -499,7 +499,7 @@ const extraProducts: Product[] = [
     capacity: "1 – 5 t",
     refCode: "TEE",
     image: {
-      src: "/products/trole-eletrico-tee.png",
+      src: "/products/trole-eletrico-tee.webp",
       width: 1536,
       height: 1024,
       alt: "Trole elétrico Elevar série TEE, carro de translação amarelo com motor elétrico",
@@ -691,7 +691,7 @@ const extraProducts: Product[] = [
     capacity: "3,5 – 70 t",
     refCode: "CEP",
     image: {
-      src: "/products/cadernal-extra-pesado-cep.png",
+      src: "/products/cadernal-extra-pesado-cep.webp",
       width: 1536,
       height: 1024,
       alt: "Cadernal extra pesado Elevar série CEP, par de blocos de roldanas amarelos com gancho",
@@ -732,7 +732,7 @@ const extraProducts: Product[] = [
     capacity: "0,5 – 15 t",
     refCode: "GAN",
     image: {
-      src: "/products/gancho-com-olhal.png",
+      src: "/products/gancho-com-olhal.webp",
       width: 1024,
       height: 1536,
       alt: "Gancho com olhal Elevar em aço forjado, com trava de segurança",
