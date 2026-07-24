@@ -127,8 +127,8 @@ export const products: Product[] = [
     ],
     image: {
       src: "/products/talha-manual-es.webp",
-      width: 1024,
-      height: 1536,
+      width: 960,
+      height: 1440,
       alt: "Talha manual de corrente Elevar Compacta, corpo amarelo com placa preta, corrente de carga preta e corrente de manobra prateada",
       transparent: true,
     },
@@ -575,7 +575,7 @@ const extraProducts: Product[] = [
       src: "/products/guincho-eletrico-gef.webp",
       width: 2000,
       height: 1554,
-      alt: "Guincho elétrico de cabo de aço Elevar série GEF, corpo amarelo fixado em viga com cabo de aço, gancho e controle pendente",
+      alt: "Guincho elétrico de cabo de a��o Elevar série GEF, corpo amarelo fixado em viga com cabo de aço, gancho e controle pendente",
       transparent: true,
     },
     specHighlights: [

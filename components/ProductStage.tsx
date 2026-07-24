@@ -127,7 +127,7 @@ export function ProductStage({
       ref={ref}
       id={product.id}
       aria-labelledby={`${product.id}-titulo`}
-      className="border-t border-coal/15 py-16 lg:py-24"
+      className="relative border-t border-coal/15 py-16 lg:py-24"
     >
       {/* Linha de metadados da estação */}
       <div className="flex flex-wrap items-baseline justify-between gap-3">
@@ -161,6 +161,8 @@ export function ProductStage({
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
+                loading="lazy"
+                decoding="async"
                 sizes="(min-width: 1024px) 28rem, 85vw"
                 className="h-[30rem] w-auto object-contain drop-shadow-[0_18px_36px_rgba(18,18,16,0.28)] sm:h-[36rem] lg:h-[40rem]"
               />
