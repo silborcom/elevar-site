@@ -325,7 +325,7 @@ const extraProducts: Product[] = [
         ["3", "TAL.ALA-3,0x1,5", "1,5", "32", "18,7"],
       ],
       note:
-        "Versões com 3 m de elevação (sufixo x3) sob o mesmo código. Ensaio a 1,5× a capacidade nominal.",
+        "Versões com 3 m de elevação (sufixo x3) sob o mesmo código. Ensaio a 1,5× a capacidade nominal. Corrente com acabamento zincado.",
     },
     source: "CATALOGO_2026",
   },
@@ -575,7 +575,7 @@ const extraProducts: Product[] = [
       src: "/products/guincho-eletrico-gef.webp",
       width: 2000,
       height: 1554,
-      alt: "Guincho elétrico de cabo de a��o Elevar série GEF, corpo amarelo fixado em viga com cabo de aço, gancho e controle pendente",
+      alt: "Guincho elétrico de cabo de a���o Elevar série GEF, corpo amarelo fixado em viga com cabo de aço, gancho e controle pendente",
       transparent: true,
     },
     specHighlights: [
