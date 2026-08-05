@@ -38,7 +38,12 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${archivoBlack.variable} ${archivo.variable} ${plexMono.variable}`}>
+    <html
+      lang="pt-BR"
+      /* `relative` no container de scroll: o framer-motion mede os offsets de
+         scroll a partir dele e avisa que não consegue calculá-los se for static. */
+      className={`relative bg-paper ${archivoBlack.variable} ${archivo.variable} ${plexMono.variable}`}
+    >
       <body>
         <ScrollProgress />
         <RulerRail />

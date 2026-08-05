@@ -32,6 +32,8 @@ export default function ProdutosPage() {
         product,
         displayIndex: String(counter).padStart(2, "0"),
         flip: counter % 2 === 0,
+        // Só a primeira estação do catálogo carrega com prioridade (LCP).
+        priority: counter === 1,
       };
     }),
   }));
@@ -118,13 +120,14 @@ export default function ProdutosPage() {
             </Reveal>
 
             <div className="mt-4">
-              {group.items.map(({ product, displayIndex, flip }) => (
+              {group.items.map(({ product, displayIndex, flip, priority }) => (
                 <ProductStage
                   key={product.id}
                   product={product}
                   flip={flip}
                   displayIndex={displayIndex}
                   total={catalogTotal}
+                  priority={priority}
                 />
               ))}
             </div>

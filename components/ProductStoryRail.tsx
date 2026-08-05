@@ -5,6 +5,12 @@ import { ProductStage } from "@/components/ProductStage";
 import { SectionHeading } from "@/components/ui";
 import { catalogIndex, products } from "@/data/products";
 
+/**
+ * O home apresenta apenas as cinco primeiras estações — coerente com o texto da
+ * seção e com o DOM enxuto. O catálogo completo (17 itens) vive em /produtos.
+ */
+const featuredProducts = products.slice(0, 5);
+
 export function ProductStoryRail() {
   return (
     <section
@@ -32,12 +38,13 @@ export function ProductStoryRail() {
         </Reveal>
 
         <div className="mt-16">
-          {products.map((product, index) => (
+          {featuredProducts.map((product, index) => (
             <ProductStage
               key={product.id}
               product={product}
               flip={index % 2 === 1}
               total={products.length}
+              priority={index === 0}
             />
           ))}
         </div>
