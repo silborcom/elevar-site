@@ -22,7 +22,7 @@ export function StoryHeadline() {
   const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [60, -60]);
 
   return (
-    <div ref={ref}>
+    <div ref={ref} className="relative">
       <BlurReveal>
         <TechnicalLabel tone="coal">SEC.01 — A natureza da carga</TechnicalLabel>
       </BlurReveal>

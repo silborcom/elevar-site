@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 
 import "./globals.css";
 import { archivo, archivoBlack, plexMono } from "./fonts";
@@ -38,8 +39,23 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${archivoBlack.variable} ${archivo.variable} ${plexMono.variable}`}>
+    <html
+      lang="pt-BR"
+      /* `relative` no container de scroll: o framer-motion mede os offsets de
+         scroll a partir dele e avisa que não consegue calculá-los se for static. */
+      className={`relative bg-paper ${archivoBlack.variable} ${archivo.variable} ${plexMono.variable}`}
+    >
       <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18330734008"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18330734008');`}
+        </Script>
         <ScrollProgress />
         <RulerRail />
         <SiteHeader />

@@ -88,6 +88,7 @@ export function SiteFooter() {
             { href: "/produtos", label: "Catálogo completo" },
             { href: "/#servicos", label: "Serviços" },
             { href: "/#especiais", label: "Equipamentos especiais" },
+            { href: "/projetos", label: "Projetos entregues" },
             { href: "/#seguranca", label: "Segurança" },
             { href: "/#contato", label: "Orçamento" },
           ].map((item) => (

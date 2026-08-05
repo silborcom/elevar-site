@@ -102,6 +102,7 @@ export function ProductStage({
   flip,
   displayIndex,
   total = 5,
+  priority = false,
 }: {
   product: Product;
   flip: boolean;
@@ -109,6 +110,12 @@ export function ProductStage({
   displayIndex?: string;
   /** Total de estações no denominador (ex.: Est. 03 / 17). */
   total?: number;
+  /**
+   * Apenas a primeira estação da página deve receber prioridade de carregamento
+   * (candidata a LCP). Todas as demais permanecem lazy para não pressionar a
+   * memória do navegador com muitas imagens decodificadas de uma só vez.
+   */
+  priority?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -127,7 +134,7 @@ export function ProductStage({
       ref={ref}
       id={product.id}
       aria-labelledby={`${product.id}-titulo`}
-      className="border-t border-coal/15 py-16 lg:py-24"
+      className="relative border-t border-coal/15 py-16 lg:py-24"
     >
       {/* Linha de metadados da estação */}
       <div className="flex flex-wrap items-baseline justify-between gap-3">
@@ -161,7 +168,9 @@ export function ProductStage({
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                sizes="(min-width: 1024px) 28rem, 85vw"
+                {...(priority ? { priority: true } : { loading: "lazy" as const })}
+                decoding="async"
+                sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 20rem"
                 className="h-[30rem] w-auto object-contain drop-shadow-[0_18px_36px_rgba(18,18,16,0.28)] sm:h-[36rem] lg:h-[40rem]"
               />
               <span aria-hidden className="absolute top-10 -right-8 bottom-2 hidden w-px bg-coal/30 sm:block">

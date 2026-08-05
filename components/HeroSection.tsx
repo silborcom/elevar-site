@@ -91,6 +91,7 @@ export function HeroSection() {
                 width={heroProduct.image!.width}
                 height={heroProduct.image!.height}
                 priority
+                decoding="async"
                 sizes="(min-width: 1024px) 22rem, 14rem"
                 className="h-[34rem] w-auto drop-shadow-[0_24px_48px_rgba(0,0,0,0.55)] lg:h-[44rem]"
               />
