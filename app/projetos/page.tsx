@@ -25,11 +25,11 @@ export default function ProjetosPage() {
 
   return (
     <main className="bg-coal text-paper">
-      <header data-sec="SEC.07" className="border-b border-paper/12">
+      <header data-sec="SEC.08" className="border-b border-paper/12">
         <div className="mx-auto max-w-7xl px-5 pt-32 pb-16 sm:px-6 lg:px-10 lg:pt-40 lg:pb-20">
           <Reveal>
             <div className="flex flex-wrap items-baseline justify-between gap-4">
-              <TechnicalLabel tone="signal">SEC.07 — Projetos entregues</TechnicalLabel>
+              <TechnicalLabel tone="signal">SEC.08 — Projetos entregues</TechnicalLabel>
               <Link
                 href="/"
                 className="t-label text-paper/55 transition-colors hover:text-signal"
