@@ -29,9 +29,14 @@ export function StoryHeadline() {
 
       <motion.div style={{ y }}>
         <BlurReveal delay={0.1} y={56} blur={18}>
-          <h2 className="mt-8 max-w-5xl font-display text-[clamp(2.25rem,6vw,5rem)] leading-[0.95] tracking-tight uppercase">
-            Movimentar carga não é sobre força.{" "}
-            <span className="bg-signal px-2 text-night">É sobre controle.</span>
+          <h2 className="mt-8 max-w-5xl font-display text-[clamp(2.25rem,6vw,5rem)] leading-[1.02] tracking-tight uppercase">
+            Movimentar carga não é sobre força.
+            {/* Quebra explícita + inline-block: o campo amarelo ganha linha
+                própria e nunca cobre os descendentes da linha anterior. */}
+            <br />
+            <span className="mt-2 inline-block bg-signal px-2 text-night lg:mt-3">
+              É sobre controle.
+            </span>
           </h2>
         </BlurReveal>
       </motion.div>

@@ -25,9 +25,14 @@ export function VerticalServiceTimeline() {
     >
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 sm:px-6 lg:grid-cols-12 lg:px-10">
         {/* Coluna fixa */}
-        <div className="lg:col-span-5">
+        <div className="min-w-0 lg:col-span-5">
           <div className="lg:sticky lg:top-32">
-            <SectionHeading code="SEC.02 — Serviços" title="Da especificação à operação" dark>
+            <SectionHeading
+              code="SEC.02 — Serviços"
+              title="Da especificação à operação"
+              dark
+              titleFontSize="clamp(1.9rem, 3.4vw, 3.25rem)"
+            >
               <p className="mt-4 max-w-md leading-relaxed text-paper/70">
                 Seis etapas entre a necessidade de mover uma carga e a carga em
                 movimento. Precisão, segurança e suporte técnico em cada uma.
@@ -48,7 +53,7 @@ export function VerticalServiceTimeline() {
         </div>
 
         {/* Etapas */}
-        <ol className="flex flex-col lg:col-span-7">
+        <ol className="flex min-w-0 flex-col lg:col-span-7">
           {serviceSteps.map((step, index) => (
             <motion.li
               key={step.index}

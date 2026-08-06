@@ -59,11 +59,18 @@ export function SectionHeading({
   title,
   dark = false,
   children,
+  titleFontSize,
 }: {
   code: string;
   title: string;
   dark?: boolean;
   children?: ReactNode;
+  /**
+   * Sobrescreve o corpo do título quando a seção tem coluna estreita (ex.: a
+   * timeline em 5/12). Vai como inline style para vencer a classe utilitária
+   * de forma previsível; quando ausente, o clamp padrão é mantido.
+   */
+  titleFontSize?: string;
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -72,6 +79,7 @@ export function SectionHeading({
         className={`font-display text-[clamp(2rem,5vw,3.75rem)] leading-[0.95] tracking-tight uppercase ${
           dark ? "text-paper" : "text-coal"
         }`}
+        style={titleFontSize ? { fontSize: titleFontSize } : undefined}
       >
         {title}
       </h2>
