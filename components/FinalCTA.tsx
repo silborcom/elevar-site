@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Reveal } from "@/lib/motion";
-import { company } from "@/data/company";
+import { company, whatsappQuoteHref } from "@/data/company";
 
 export function FinalCTA() {
   return (
@@ -30,7 +30,7 @@ export function FinalCTA() {
           <Reveal delay={0.1}>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
-                href={company.whatsappHref}
+                href={whatsappQuoteHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="t-label bg-night px-7 py-4 text-signal transition-colors hover:bg-coal"

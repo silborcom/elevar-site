@@ -23,6 +23,15 @@ export const company = {
 } as const;
 
 /**
+ * WhatsApp com a mensagem de orçamento já preenchida.
+ * Montagem centralizada aqui: todos os CTAs "Solicitar orçamento" importam
+ * esta constante, para o número e o texto viverem num único lugar.
+ */
+export const whatsappQuoteHref =
+  `${company.whatsappHref}?text=` +
+  encodeURIComponent("Olá! Gostaria de solicitar um orçamento.");
+
+/**
  * Indicadores extraídos do conteúdo institucional do site atual.
  * Nenhum número foi inventado — todos precisam de validação final do cliente.
  */

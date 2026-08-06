@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { StaggerGroup, StaggerItem, Reveal } from "@/lib/motion";
 import { TechnicalLabel } from "@/components/ui";
-import { company } from "@/data/company";
+import { company, whatsappQuoteHref } from "@/data/company";
 import { products } from "@/data/products";
 
 export function HeroSection() {
@@ -46,12 +46,14 @@ export function HeroSection() {
 
             <StaggerItem>
               <div className="mt-10 flex flex-wrap items-center gap-4">
-                <Link
-                  href="#contato"
+                <a
+                  href={whatsappQuoteHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="t-label bg-signal px-7 py-4 text-night transition-colors hover:bg-paper"
                 >
                   Solicitar orçamento
-                </Link>
+                </a>
                 <Link
                   href="#equipamentos"
                   className="t-label border border-paper/35 px-7 py-4 text-paper transition-colors hover:border-signal hover:text-signal"

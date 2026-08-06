@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { whatsappQuoteHref } from "@/data/company";
+
 const navItems = [
   { href: "/#equipamentos", label: "Equipamentos" },
   { href: "/produtos", label: "Catálogo" },
@@ -30,12 +32,14 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link
-          href="/#contato"
+        <a
+          href={whatsappQuoteHref}
+          target="_blank"
+          rel="noopener noreferrer"
           className="t-label bg-signal px-4 py-2.5 text-night transition-colors hover:bg-paper"
         >
           Solicitar orçamento
-        </Link>
+        </a>
       </div>
     </header>
   );
