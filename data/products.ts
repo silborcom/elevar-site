@@ -127,9 +127,9 @@ export const products: Product[] = [
     ],
     image: {
       src: "/products/talha-manual-es.webp",
-      width: 960,
-      height: 1440,
-      alt: "Talha manual de corrente Elevar Compacta, corpo amarelo com placa preta, corrente de carga preta e corrente de manobra prateada",
+      width: 438,
+      height: 1600,
+      alt: "Talha manual de corrente Elevar Compacta EC de 0,5 tonelada, corpo amarelo com corrente de carga preta e corrente de manobra zincada",
       transparent: true,
     },
     source: "CATALOGO_2026",
