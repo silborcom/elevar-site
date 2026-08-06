@@ -53,38 +53,24 @@ export function SpecPill({
   );
 }
 
-/**
- * Grid industrial aparente: hairlines verticais que atravessam a seção,
- * como mesa de desenho técnico. Puramente decorativo.
- */
-export function IndustrialGrid({ dark = false }: { dark?: boolean }) {
-  const line = dark ? "bg-paper/8" : "bg-coal/8";
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-      <div className="relative mx-auto h-full max-w-7xl px-6 lg:px-10">
-        {[25, 50, 75].map((left) => (
-          <span
-            key={left}
-            className={`absolute top-0 h-full w-px ${line}`}
-            style={{ left: `${left}%` }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 /** Cabeçalho padrão de seção: código + título de display. */
 export function SectionHeading({
   code,
   title,
   dark = false,
   children,
+  titleFontSize,
 }: {
   code: string;
   title: string;
   dark?: boolean;
   children?: ReactNode;
+  /**
+   * Sobrescreve o corpo do título quando a seção tem coluna estreita (ex.: a
+   * timeline em 5/12). Vai como inline style para vencer a classe utilitária
+   * de forma previsível; quando ausente, o clamp padrão é mantido.
+   */
+  titleFontSize?: string;
 }) {
   return (
     <div className="flex flex-col gap-4">
@@ -93,6 +79,7 @@ export function SectionHeading({
         className={`font-display text-[clamp(2rem,5vw,3.75rem)] leading-[0.95] tracking-tight uppercase ${
           dark ? "text-paper" : "text-coal"
         }`}
+        style={titleFontSize ? { fontSize: titleFontSize } : undefined}
       >
         {title}
       </h2>

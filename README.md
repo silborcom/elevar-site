@@ -73,7 +73,7 @@ components/
   SpecialEquipmentSection.tsx  # preto dominante + esquema SVG de ponte rolante
   SafetySection.tsx      # dados grandes (1,5× · +25 · normas · assistência)
   FinalCTA.tsx           # CTA em campo amarelo + footer
-  ui.tsx                 # TechnicalLabel, SpecPill, IndustrialGrid, SectionHeading
+  ui.tsx                 # TechnicalLabel, SpecPill, SectionHeading
 data/
   products.ts            # produtos extraídos de CATALOGO_2026 (tabelas completas)
   services.ts            # etapas de serviço + frentes especiais
