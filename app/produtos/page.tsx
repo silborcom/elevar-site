@@ -42,13 +42,13 @@ export default function ProdutosPage() {
     <main className="bg-paper text-coal">
       {/* Cabeçalho do catálogo */}
       <header
-        data-sec="SEC.07"
+        data-sec="SEC.08"
         className="border-b border-paper/12 bg-coal text-paper"
       >
         <div className="mx-auto max-w-7xl px-5 pt-32 pb-20 sm:px-6 lg:px-10 lg:pt-40 lg:pb-28">
           <Reveal>
             <div className="flex flex-wrap items-baseline justify-between gap-4">
-              <TechnicalLabel tone="signal">SEC.07 — Catálogo completo</TechnicalLabel>
+              <TechnicalLabel tone="signal">SEC.08 — Catálogo completo</TechnicalLabel>
               <Link
                 href="/"
                 className="t-label text-paper/55 transition-colors hover:text-signal"

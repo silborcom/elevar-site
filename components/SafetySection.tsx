@@ -6,13 +6,13 @@ export function SafetySection() {
   return (
     <section
       id="seguranca"
-      data-sec="SEC.05"
+      data-sec="SEC.06"
       aria-label="Segurança e confiança"
       className="relative bg-paper py-24 text-coal lg:py-36"
     >
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <Reveal>
-          <SectionHeading code="SEC.05 — Segurança" title="Capacidade nominal é compromisso">
+          <SectionHeading code="SEC.06 — Segurança" title="Capacidade nominal é compromisso">
             <p className="mt-4 max-w-2xl leading-relaxed text-coal/70">
               Ensaio, norma e assistência fazem parte do equipamento tanto
               quanto a corrente e o gancho. Os dados abaixo vêm do conteúdo

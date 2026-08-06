@@ -121,7 +121,7 @@ export function ProjectGalleryRail({
         className="snap-x snap-mandatory scroll-pl-5 overflow-x-auto overscroll-x-contain pb-1 sm:scroll-pl-6 lg:scroll-pl-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
       >
         <ul className="flex w-max items-stretch gap-4 px-5 sm:px-6 lg:px-10">
-          {projects.map((project, index) => {
+          {projects.map((project) => {
             const obraLabel = project.obraId ? obraLabels[project.obraId] : undefined;
             const meta = metaLine(project, obraLabel);
 
@@ -138,8 +138,9 @@ export function ProjectGalleryRail({
                     alt={project.image.alt}
                     fill
                     sizes="(max-width: 768px) 80vw, 45vw"
-                    /* Só a primeira foto é candidata a LCP; as demais ficam lazy. */
-                    {...(index === 0 ? { priority: true } : { loading: "lazy" as const })}
+                    /* O trilho vive abaixo da dobra: o único priority da home é
+                       a foto do hero. Todas as 12 fotos daqui ficam lazy. */
+                    loading="lazy"
                     decoding="async"
                     draggable={false}
                     className="object-cover select-none"
