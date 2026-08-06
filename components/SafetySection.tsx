@@ -1,5 +1,5 @@
 import { Reveal } from "@/lib/motion";
-import { IndustrialGrid, SectionHeading } from "@/components/ui";
+import { SectionHeading } from "@/components/ui";
 import { engineeringDetails, trustData } from "@/data/company";
 
 export function SafetySection() {
@@ -10,8 +10,6 @@ export function SafetySection() {
       aria-label="Segurança e confiança"
       className="relative bg-paper py-24 text-coal lg:py-36"
     >
-      <IndustrialGrid />
-
       <div className="relative mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <Reveal>
           <SectionHeading code="SEC.05 — Segurança" title="Capacidade nominal é compromisso">

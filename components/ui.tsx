@@ -53,27 +53,6 @@ export function SpecPill({
   );
 }
 
-/**
- * Grid industrial aparente: hairlines verticais que atravessam a seção,
- * como mesa de desenho técnico. Puramente decorativo.
- */
-export function IndustrialGrid({ dark = false }: { dark?: boolean }) {
-  const line = dark ? "bg-paper/8" : "bg-coal/8";
-  return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-      <div className="relative mx-auto h-full max-w-7xl px-6 lg:px-10">
-        {[25, 50, 75].map((left) => (
-          <span
-            key={left}
-            className={`absolute top-0 h-full w-px ${line}`}
-            style={{ left: `${left}%` }}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
 /** Cabeçalho padrão de seção: código + título de display. */
 export function SectionHeading({
   code,

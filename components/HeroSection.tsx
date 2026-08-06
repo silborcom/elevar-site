@@ -115,12 +115,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Hairlines do grid sobre o hero */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 hidden lg:block">
-        <div className="relative mx-auto h-full max-w-7xl px-10">
-          <span className="absolute top-0 left-[58.333%] h-full w-px bg-paper/8" />
-        </div>
-      </div>
     </section>
   );
 }
