@@ -7,7 +7,7 @@ export function FinalCTA() {
   return (
     <section
       id="contato"
-      data-sec="SEC.06"
+      data-sec="SEC.07"
       aria-label="Solicitar orçamento"
       className="relative bg-signal text-night"
     >
@@ -16,7 +16,7 @@ export function FinalCTA() {
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-5 py-24 sm:px-6 lg:grid-cols-12 lg:px-10 lg:py-32">
         <div className="lg:col-span-7">
           <Reveal>
-            <p className="t-label text-night/60">SEC.06 — Orçamento e projeto</p>
+            <p className="t-label text-night/60">SEC.07 — Orçamento e projeto</p>
             <h2 className="mt-6 font-display text-[clamp(2.5rem,6vw,5.25rem)] leading-[0.95] tracking-tight uppercase">
               Descreva a carga. Nós dimensionamos o resto.
             </h2>
@@ -88,7 +88,7 @@ export function SiteFooter() {
             { href: "/produtos", label: "Catálogo completo" },
             { href: "/#servicos", label: "Serviços" },
             { href: "/#especiais", label: "Equipamentos especiais" },
-            { href: "/projetos", label: "Projetos entregues" },
+            { href: "/#projetos", label: "Projetos entregues" },
             { href: "/#seguranca", label: "Segurança" },
             { href: "/#contato", label: "Orçamento" },
           ].map((item) => (
