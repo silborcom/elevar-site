@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { BlurReveal } from "@/lib/motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { BlurReveal, useSafeReducedMotion } from "@/lib/motion";
 import { TechnicalLabel } from "@/components/ui";
 
 /**
@@ -11,7 +11,7 @@ import { TechnicalLabel } from "@/components/ui";
  */
 export function StoryHeadline() {
   const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
 
   const { scrollYProgress } = useScroll({
     target: ref,

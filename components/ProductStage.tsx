@@ -3,9 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-import { Reveal } from "@/lib/motion";
+import { Reveal, useSafeReducedMotion } from "@/lib/motion";
 import { SpecPill, TechnicalLabel } from "@/components/ui";
 import type { Product, SpecTable } from "@/data/products";
 
@@ -118,7 +118,7 @@ export function ProductStage({
   priority?: boolean;
 }) {
   const ref = useRef<HTMLElement>(null);
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],

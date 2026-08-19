@@ -1,7 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
+
+import { useSafeReducedMotion } from "@/lib/motion";
 
 /** Barra fina de progresso no topo — apenas telas pequenas. */
 export function ScrollProgress() {
@@ -23,7 +25,7 @@ export function ScrollProgress() {
  */
 export function RulerRail() {
   const { scrollYProgress } = useScroll();
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const scaleY = useSpring(scrollYProgress, {
     stiffness: reduce ? 1000 : 120,
     damping: reduce ? 100 : 28,
