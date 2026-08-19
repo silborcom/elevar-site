@@ -45,8 +45,10 @@ export const projects: Project[] = [
     obraId: "fertilizantes",
     description:
       "Uma das maiores obras de fertilizantes do Brasil: mais de 40 talhas elétricas de cabo de aço, em diversas capacidades e alturas de elevação.",
+    // Atenção: o arquivo físico tem conteúdo trocado com o do outro projeto — este src
+    // cruzado é proposital e correto. Não "corrigir" para o nome correspondente.
     image: {
-      src: "/projects/obra-fertilizantes-talhas.webp",
+      src: "/projects/barra-carga-5t.webp",
       width: 1600,
       height: 1200,
       alt: "Duas talhas elétricas de cabo de aço Elevar instaladas em monovia sobre estrutura de concreto da planta de fertilizantes",
@@ -75,8 +77,10 @@ export const projects: Project[] = [
     capacity: "5,0 t",
     description:
       "Barra de carga especial para 5 toneladas, em operação suspensa sobre linha de produção.",
+    // Atenção: o arquivo físico tem conteúdo trocado com o do outro projeto — este src
+    // cruzado é proposital e correto. Não "corrigir" para o nome correspondente.
     image: {
-      src: "/projects/barra-carga-5t.webp",
+      src: "/projects/obra-fertilizantes-talhas.webp",
       width: 1600,
       height: 1200,
       alt: "Barra de carga Elevar amarela de 5 toneladas com ganchos nas extremidades, suspensa em galpão industrial",
