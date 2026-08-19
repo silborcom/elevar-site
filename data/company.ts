@@ -64,8 +64,5 @@ export const trustData = [
 
 /** Detalhes de projeto citados na linha TAE (site institucional). */
 export const engineeringDetails = [
-  "Ensaio a 1,5× a capacidade nominal",
-  "Proteção de sobrecarga reforçada",
-  "Corrente de carga zincada · série 100",
   "Chave seletora para operação em modo livre",
 ] as const;

@@ -45,7 +45,7 @@ export function SafetySection() {
         {/* Detalhes de projeto — série TAE */}
         <Reveal delay={0.1}>
           <div className="mt-16 border border-coal/20 bg-bone px-6 py-6 lg:px-8">
-            <p className="t-label text-steel">Detalhes de projeto — Série TAE</p>
+            <p className="t-label text-steel">Detalhes dos equipamentos</p>
             <ul className="mt-4 flex flex-wrap gap-x-8 gap-y-3">
               {engineeringDetails.map((detail) => (
                 <li key={detail} className="flex items-center gap-3 font-mono text-sm text-coal/85">
