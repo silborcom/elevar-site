@@ -37,12 +37,6 @@ export const whatsappQuoteHref =
  */
 export const trustData = [
   {
-    figure: "1,5×",
-    label: "Carga de ensaio",
-    description:
-      "Talhas de alavanca da série TAE são testadas a 1,5 vez a capacidade nominal antes do fornecimento.",
-  },
-  {
     figure: "+25",
     label: "Anos de engenharia",
     description:
