@@ -111,16 +111,17 @@ export function BlurReveal({
 export function PulseArrow({ className }: { className?: string }) {
   const reduce = useSafeReducedMotion();
 
-  if (reduce) {
-    return (
-      <span aria-hidden className={className}>
-        <span className="absolute top-1 bottom-0 left-0 w-px bg-coal/30" />
-        <span className="absolute -bottom-1 -left-[3.5px] font-mono text-[10px] text-coal/60">
-          ▼
-        </span>
-      </span>
-    );
-  }
+  /* Uma única árvore de DOM, independente de `reduce`. Alternar apenas as
+     props de animação evita montar/desmontar um `motion.span` que já está
+     sendo animado — desmontá-lo durante o loop provoca corrida com o Framer
+     e o erro `removeChild` do React no commit. Com `reduce`, o loop apenas
+     para e o elemento repousa fora de vista. */
+  const loopTransition = {
+    duration: 2.4,
+    ease: "easeInOut" as const,
+    repeat: Infinity,
+    repeatDelay: 0.4,
+  };
 
   return (
     <span aria-hidden className={className}>
@@ -128,25 +129,14 @@ export function PulseArrow({ className }: { className?: string }) {
         <motion.span
           className="absolute inset-x-0 top-0 h-1/3 bg-coal/70"
           initial={{ y: "-100%" }}
-          animate={{ y: ["-100%", "300%"] }}
-          transition={{
-            duration: 2.4,
-            ease: "easeInOut",
-            repeat: Infinity,
-            repeatDelay: 0.4,
-          }}
+          animate={reduce ? { y: "-100%" } : { y: ["-100%", "300%"] }}
+          transition={reduce ? { duration: 0 } : loopTransition}
         />
       </span>
       <motion.span
         className="absolute -left-[3.5px] font-mono text-[10px] text-coal/60"
-        initial={{ bottom: "-4px" }}
-        animate={{ y: [0, 6, 0], opacity: [0.6, 1, 0.6] }}
-        transition={{
-          duration: 2.4,
-          ease: "easeInOut",
-          repeat: Infinity,
-          repeatDelay: 0.4,
-        }}
+        animate={reduce ? { y: 0, opacity: 0.6 } : { y: [0, 6, 0], opacity: [0.6, 1, 0.6] }}
+        transition={reduce ? { duration: 0 } : loopTransition}
         style={{ bottom: "-4px" }}
       >
         ▼
