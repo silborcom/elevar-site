@@ -1,9 +1,36 @@
 "use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
-import type { ComponentPropsWithoutRef, ElementType, ReactNode } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  type ReactNode,
+} from "react";
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+
+/**
+ * Versão de `useReducedMotion` segura para hidratação.
+ *
+ * `useReducedMotion` lê a media query já na primeira renderização, então o
+ * servidor devolve `false` e o cliente pode devolver `true` — divergência que
+ * quebra a hidratação (initial styles e ramos condicionais diferentes). Aqui
+ * espelhamos o padrão do servidor (`false`) no primeiro paint e só adotamos a
+ * preferência real depois de montar no cliente.
+ */
+export function useSafeReducedMotion(): boolean {
+  const preference = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  return mounted ? (preference ?? false) : false;
+}
 
 /**
  * Revela o conteúdo ao entrar na viewport. Base preparada para evoluir
@@ -22,8 +49,8 @@ export function Reveal({
   className?: string;
   as?: ElementType;
 }) {
-  const reduce = useReducedMotion();
-  const MotionTag = motion.create(Tag as ElementType);
+  const reduce = useSafeReducedMotion();
+  const MotionTag = useMemo(() => motion.create(Tag as ElementType), [Tag]);
 
   return (
     <MotionTag
@@ -57,8 +84,8 @@ export function BlurReveal({
   className?: string;
   as?: ElementType;
 }) {
-  const reduce = useReducedMotion();
-  const MotionTag = motion.create(Tag as ElementType);
+  const reduce = useSafeReducedMotion();
+  const MotionTag = useMemo(() => motion.create(Tag as ElementType), [Tag]);
 
   return (
     <MotionTag
@@ -82,7 +109,7 @@ export function BlurReveal({
  * reforçando a leitura descendente do vetor de carga.
  */
 export function PulseArrow({ className }: { className?: string }) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
 
   if (reduce) {
     return (
@@ -162,7 +189,7 @@ export function StaggerItem({
 }: { children: ReactNode; className?: string } & ComponentPropsWithoutRef<
   typeof motion.div
 >) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const variants: Variants = {
     hidden: { opacity: 0, y: reduce ? 0 : 34 },
     show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },

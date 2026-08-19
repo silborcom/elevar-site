@@ -2,8 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useReducedMotion } from "framer-motion";
-
+import { useSafeReducedMotion } from "@/lib/motion";
 import type { Project } from "@/data/projects";
 
 /** Monta a linha mono sob o nome, ignorando metadados ausentes. */
@@ -44,7 +43,7 @@ export function ProjectGalleryRail({
 }) {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<{ startX: number; startLeft: number } | null>(null);
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
 
   const [progress, setProgress] = useState(0);
   const [atStart, setAtStart] = useState(true);

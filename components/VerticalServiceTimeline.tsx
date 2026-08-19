@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { motion } from "framer-motion";
 import { useState } from "react";
 
-import { Reveal } from "@/lib/motion";
+import { Reveal, useSafeReducedMotion } from "@/lib/motion";
 import { SectionHeading } from "@/components/ui";
 import { serviceSteps } from "@/data/services";
 
@@ -14,7 +14,7 @@ import { serviceSteps } from "@/data/services";
  */
 export function VerticalServiceTimeline() {
   const [active, setActive] = useState(0);
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
 
   return (
     <section
