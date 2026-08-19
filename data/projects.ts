@@ -71,8 +71,8 @@ export const projects: Project[] = [
     id: "barra-carga-5t",
     index: "03",
     name: "Barra de carga especial",
-    equipment: "Viga de içamento com ganchos nas extremidades",
-    capacity: "5,0 t",
+    equipment: "Monovias e talhas em estrutura de processo",
+    obraId: "fertilizantes",
     description:
       "Barra de carga especial para 5 toneladas, em operação suspensa sobre linha de produção.",
     image: {
